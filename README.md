@@ -8,6 +8,9 @@ git commit -m "first commit"
 git push -u origin master
 
 server目录下,安装express:
+
 npm install -g express-generator 
+
 npm install -g express 
+
 express -e .
