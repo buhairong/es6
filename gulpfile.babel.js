@@ -1,3 +1,3 @@
-/**
- * Created by JimLiu on 2018/6/15.
- */
+import requireDir from 'require-dir';
+
+requireDir('./tasks');

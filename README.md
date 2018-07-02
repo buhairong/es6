@@ -16,3 +16,18 @@ npm install -g express-generator
 npm install -g express 
 
 express -e .
+
+安装包
+npm install gulp gulp-if gulp-concat webpack webpack-cli webpack-stream vinyl-named gulp-livereload gulp-plumber gulp-rename gulp-uglify gulp-util yargs --save-dev
+
+npm install gulp-live-server del gulp-util --save-dev
+
+npm install babel-loader babel-core babel-preset-env --save-dev
+
+npm install require-dir --save-dev
+
+npm install babel-preset-es2015 --save-dev
+
+npm install gulp-sequence --save-dev
+
+npm install connect-livereload --save-dev
