@@ -31,3 +31,5 @@ npm install babel-preset-es2015 --save-dev
 npm install gulp-sequence --save-dev
 
 npm install connect-livereload --save-dev
+
+npm install babel-polyfill --save-dev
