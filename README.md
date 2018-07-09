@@ -6,7 +6,7 @@ git下载：https://www.git-scm.com/download/win
 
 进入想项目文件夹上传所有文件:
 git add .
-git commit -m "first commit"
+git commit -m "add file"
 git push -u origin master
 
 server目录下,安装express:
