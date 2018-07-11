@@ -9615,40 +9615,63 @@ module.exports = function (regExp, replace) {
 "use strict";
 
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 {
-    var arr = ['hello', 'world'];
-    var map = arr[Symbol.iterator]();
-    console.log(map.next());
-    console.log(map.next());
-    console.log(map.next());
+    //genertaor基本定义
+    var tell = /*#__PURE__*/regeneratorRuntime.mark(function tell() {
+        return regeneratorRuntime.wrap(function tell$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        _context.next = 2;
+                        return 'a';
+
+                    case 2:
+                        _context.next = 4;
+                        return 'b';
+
+                    case 4:
+                        return _context.abrupt('return', 'c');
+
+                    case 5:
+                    case 'end':
+                        return _context.stop();
+                }
+            }
+        }, tell, this);
+    });
+
+    var k = tell();
+
+    console.log(k.next());
+    console.log(k.next());
+    console.log(k.next());
+    console.log(k.next());
 }
 
 {
-    var obj = _defineProperty({
-        start: [1, 3, 2],
-        end: [7, 9, 8]
-    }, Symbol.iterator, function () {
-        var self = this;
-        var index = 0;
-        var arr = self.start.concat(self.end);
-        var len = arr.length;
-        return {
-            next: function next() {
-                if (index < len) {
-                    return {
-                        value: arr[index++],
-                        done: false
-                    };
-                } else {
-                    return {
-                        value: arr[index++],
-                        done: true
-                    };
+    var obj = {};
+    obj[Symbol.iterator] = /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context2) {
+            while (1) {
+                switch (_context2.prev = _context2.next) {
+                    case 0:
+                        _context2.next = 2;
+                        return 1;
+
+                    case 2:
+                        _context2.next = 4;
+                        return 2;
+
+                    case 4:
+                        _context2.next = 6;
+                        return 3;
+
+                    case 6:
+                    case 'end':
+                        return _context2.stop();
                 }
             }
-        };
+        }, _callee, this);
     });
 
     var _iteratorNormalCompletion = true;
@@ -9657,9 +9680,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     try {
         for (var _iterator = obj[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var key = _step.value;
+            var value = _step.value;
 
-            console.log(key);
+            console.log('value', value);
         }
     } catch (err) {
         _didIteratorError = true;
@@ -9678,31 +9701,144 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }
 
 {
-    var _arr = ['hello', 'world'];
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
+    var state = /*#__PURE__*/regeneratorRuntime.mark(function state() {
+        return regeneratorRuntime.wrap(function state$(_context3) {
+            while (1) {
+                switch (_context3.prev = _context3.next) {
+                    case 0:
+                        if (false) {
+                            _context3.next = 9;
+                            break;
+                        }
 
-    try {
-        for (var _iterator2 = _arr[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-            var value = _step2.value;
+                        _context3.next = 3;
+                        return 'A';
 
-            console.log('value', value);
-        }
-    } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                _iterator2.return();
+                    case 3:
+                        _context3.next = 5;
+                        return 'B';
+
+                    case 5:
+                        _context3.next = 7;
+                        return 'C';
+
+                    case 7:
+                        _context3.next = 0;
+                        break;
+
+                    case 9:
+                    case 'end':
+                        return _context3.stop();
+                }
             }
-        } finally {
-            if (_didIteratorError2) {
-                throw _iteratorError2;
-            }
+        }, state, this);
+    });
+
+    var status = state();
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+}
+
+/*{
+    let state = async function (){
+        while(1){
+            await 'A';
+            await 'B';
+            await 'C';
         }
     }
+
+    let status = state();
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+    console.log(status.next());
+}*/
+
+{
+    var draw = function draw(count) {
+        //具体抽奖逻辑
+        console.info('\u5269\u4F59' + count + '\u6B21');
+    };
+
+    var residue = /*#__PURE__*/regeneratorRuntime.mark(function residue(count) {
+        return regeneratorRuntime.wrap(function residue$(_context4) {
+            while (1) {
+                switch (_context4.prev = _context4.next) {
+                    case 0:
+                        if (!(count > 0)) {
+                            _context4.next = 6;
+                            break;
+                        }
+
+                        count--;
+                        _context4.next = 4;
+                        return draw(count);
+
+                    case 4:
+                        _context4.next = 0;
+                        break;
+
+                    case 6:
+                    case 'end':
+                        return _context4.stop();
+                }
+            }
+        }, residue, this);
+    });
+
+    var star = residue(5);
+    var btn = document.createElement('button');
+    btn.id = 'start';
+    btn.textContent = '抽奖';
+    document.body.appendChild(btn);
+    document.getElementById("start").addEventListener('click', function () {
+        star.next();
+    }, false);
+}
+
+{
+    //长轮询
+    var ajax = /*#__PURE__*/regeneratorRuntime.mark(function ajax() {
+        return regeneratorRuntime.wrap(function ajax$(_context5) {
+            while (1) {
+                switch (_context5.prev = _context5.next) {
+                    case 0:
+                        _context5.next = 2;
+                        return new Promise(function (resolve, reject) {
+                            setTimeout(function () {
+                                resolve({ code: 0 });
+                            }, 200);
+                        });
+
+                    case 2:
+                    case 'end':
+                        return _context5.stop();
+                }
+            }
+        }, ajax, this);
+    });
+
+    var pull = function pull() {
+        var genertaor = ajax();
+        var step = genertaor.next();
+        step.value.then(function (d) {
+            if (d.code != 0) {
+                setTimeout(function () {
+                    console.info('wait');
+                    pull();
+                }, 1000);
+            } else {
+                console.info(d);
+            }
+        });
+    };
+
+    pull();
 }
 
 /***/ })
