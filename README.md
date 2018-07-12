@@ -33,3 +33,5 @@ npm install gulp-sequence --save-dev
 npm install connect-livereload --save-dev
 
 npm install babel-polyfill --save-dev
+
+npm install babel-plugin-transform-decorators-legacy --save-dev
